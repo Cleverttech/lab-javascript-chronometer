@@ -34,7 +34,7 @@ class Chronometer {
     this.currentTime = 0;
   }
 
-  splitClick(num1, num2) {
+  splitClick() {
     let x = this.twoDigitsNumber(this.getMinutes());
     let y = this.twoDigitsNumber(this.getSeconds());
 
