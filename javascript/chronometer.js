@@ -12,15 +12,11 @@ class Chronometer {
   }
 
   getMinutes() {
-    let minutes = Math.floor(this.currentTime / 60);
-    // console.log(minutes);
-    return minutes;
+    return Math.floor(this.currentTime / 60);
   }
 
   getSeconds() {
-    let seconds = this.currentTime % 60;
-    // console.log(minutes);
-    return seconds;
+    return this.currentTime % 60;
   }
 
   twoDigitsNumber(num) {
@@ -39,24 +35,10 @@ class Chronometer {
     this.currentTime = 0;
   }
 
-  splitClick(num) {
-    let hours = this.currentTime / 3600;
-    let mins = (this.currentTime % 3600) / 60;
-    let secs = this.currentTime % 60;
+  splitClick(num1, num2) {
+    let x = this.twoDigitsNumber(this.getMinutes());
+    let y = this.twoDigitsNumber(this.getSeconds());
 
-    num = "0";
-    if (hours > 0) {
-      if (mins < 10) {
-        ("0");
-      } else {
-        ("");
-      }
-      return (num += `${hours}:`);
-    }
-    num += `${mins}:` + (secs < 10 ? "0" : "");
-
-    num += `${secs}`;
-
-    return num;
+    return `${x}:${y}`;
   }
 }
